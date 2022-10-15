@@ -1,0 +1,14 @@
+<h1>Caching</h1>
+<div>
+    <label>Country</label>
+    <select (change)="handleCountryChange()" [(ngModel)]="countryCode">
+        <option></option>
+        <option *ngFor="let item of countryOptions" [value]="item.code">{{item.name}}</option>
+    </select>
+</div>
+<div>
+    <label>State</label>
+    <select>
+        <option *ngFor="let item of stateOptions" [value]="item.code">{{item.name}}</option>
+    </select>
+</div>

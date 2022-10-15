@@ -1,0 +1,18 @@
+<textarea [(ngModel)]="value"></textarea>
+<button (click)="showValue()">Show</button>
+<div>{{value}}</div>
+<h2>Sanitize Context</h2>
+<div [innerHTML]="value"></div>
+<h2>Non Sanitize</h2>
+<div [innerHTML]="nonSanitizeHTML"></div>
+
+<div>
+    <input type="text" id="txtVideo" [(ngModel)]="value" /> <button (click)="showVideo()">Show Video</button>
+</div>
+
+<ng-container *ngIf="youtubeUrl">
+    {{youtubeUrl}}
+    <iframe width="560" height="315" [src]="youtubeUrl" title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+</ng-container>
